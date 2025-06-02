@@ -1,218 +1,148 @@
-/* ===================  BASE RESET & TYPOGRAPHY  =================== */
+/* =================== BASE RESET & TYPOGRAPHY =================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Sohne", Arial, Helvetica, sans-serif;
+  color: #333;
+  background: #fff;
+  line-height: 1.4;
+}
 
-/* ================= Reusable Button ================= */
+/* =================== REUSABLE BUTTON =================== */
 .btn {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Sohne", Arial, Helvetica, sans-serif;
   font-weight: 500;
   line-height: 1.2;
   border-radius: 4px;
   cursor: pointer;
 }
-
-
 .btn--primary {
-  color: #ffffff;
+  color: #fff;
   background: transparent;
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
 }
 
-
-
-body {
-  font-family: "Sohne", Arial, Helvetica, sans-serif;
-  color: #333333;
-  background-color: #ffffff;
-  line-height: 1.4;
-}
-
-/* =====================  HERO SECTION (RESPONSIVE)  ===================== */
+/* =================== HERO SECTION =================== */
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;        
+  height: 100vh;
   overflow: hidden;
 }
-
 .hero__img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;    
+  object-fit: cover;
   z-index: 1;
 }
-
 .hero__overlay {
   position: absolute;
   top: 50%;
-  right: 10%;           
+  right: 10%;
   transform: translateY(-50%);
   text-align: right;
-  z-index: 2;           
-  max-width: 400px;     
+  z-index: 2;
+  max-width: 400px;
 }
-
 .hero__title {
-  margin: 0 0 1rem 0;
+  margin-bottom: 1rem;
   font-size: 2.5rem;
-  color: #ffffff;       
+  color: #fff;
   line-height: 1.2;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* =====================  PRODUCT GRID SECTION (RESPONSIVE)  ===================== */
+/* =================== PRODUCT GRID SECTION =================== */
 .product-section {
   display: flex;
-  justify-content: center; 
-  padding: 2rem 1rem;       
-  background-color: #ffffff;
+  justify-content: center;
+  padding: 2rem 1rem;
 }
-
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
-  gap: 1.5rem;       
-  max-width: 1200px; 
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
   width: 100%;
 }
 
+/* =================== SHARED CARD STYLES =================== */
 .product-card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .product-card__img {
   width: 100%;
-  height: auto;       
-  display: block;
-  border-radius: 4px; 
-}
-
-.product-card__label {
-  margin-top: 0.75rem;
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: center;
-  color: #333333;
-  letter-spacing: 0.025em;
-}
-
-/* =====================  FEATURED CAROUSEL SECTION (RESPONSIVE)  ===================== */
-.featured-carousel-section {
-  padding: 2rem 1rem;
-  background-color: #ffffff;
-  text-align: center; /* heading & carousel are centered by a wrapper anyway */
-}
-
-.featured-carousel-section__wrapper {
-  max-width: 1200px;    
-  margin: 0 auto;       
-  padding: 0 1rem;      
-}
-
-.featured-carousel-section__title {
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: #000000;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-/* Slides: center image + label inside each slide */
-.glide__slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.product-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.product-card__img {
-  width: 100%;
-  height: auto;
   border-radius: 4px;
+  display: block;
 }
-
 .product-card__label {
   margin-top: 0.75rem;
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
   letter-spacing: 0.02em;
-  color: #555555;
+  color: #333;
 }
 
-/* Arrows */
+/* =================== FEATURED CAROUSEL SECTION =================== */
+.featured-carousel-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.featured-carousel-section__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.featured-carousel-section__title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.glide__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .glide__arrows {
   margin-top: 1rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
-
 .glide__arrow {
-  background-color: rgba(0,0,0,0.05);
+  background: rgba(0,0,0,0.05);
   border: none;
   font-size: 1.5rem;
-  color: #333333;
+  color: #333;
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.2s ease;
 }
 .glide__arrow:hover {
-  background-color: rgba(0,0,0,0.15);
+  background: rgba(0,0,0,0.15);
 }
 
-/* Bullets */
-/* .glide__bullets {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-}
-.glide__bullet {
-  width: 0.9rem;
-  height: 0.9rem;
-  border-radius: 50%;
-  background: #cccccc;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-.glide__bullet:hover {
-  background: #aaaaaa;
-}
-.glide__bullet[aria-selected='true'] {
-  background: #333333;
-} */
-
-/* =====================  GLOBAL RESPONSIVE BREAKPOINTS  ===================== */
-
-
+/* =================== RESPONSIVE BREAKPOINTS =================== */
+/* Tablet & small desktops (≤900px) */
 @media (max-width: 900px) {
-  /* HERO SECTION */
+  /* HERO */
   .hero__overlay {
-    top: 50%;
-    right: 5%;               
-    transform: translateY(-50%);
+    right: 5%;
     max-width: 300px;
   }
   .hero__title {
@@ -223,15 +153,15 @@ body {
     padding: 0.4rem 0.8rem;
   }
 
-  /* PRODUCT GRID SECTION */
+  /* PRODUCT GRID → 2 columns */
   .product-grid {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
   }
   .product-card__label {
     font-size: 0.95rem;
   }
 
-  /* FEATURED CAROUSEL SECTION */
+  /* FEATURED CAROUSEL */
   .featured-carousel-section__title {
     font-size: 1.75rem;
     margin-bottom: 1rem;
@@ -243,26 +173,21 @@ body {
     font-size: 1.25rem;
     padding: 0.4rem 0.6rem;
   }
-  .glide__bullet {
-    width: 0.75rem;
-    height: 0.75rem;
-  }
 }
 
-/* 2) PHONES & SMALL SCREENS  */
-
+/* Phones & small screens (≤600px) */
 @media (max-width: 600px) {
-  /* HERO SECTION */
+  /* HERO → auto height with 60vh image */
   .hero {
-    height: auto;             
+    height: auto;
   }
   .hero__img {
-    height: 60vh;             
+    height: 60vh;
   }
   .hero__overlay {
     top: 50%;
-    right: auto;
     left: 50%;
+    right: auto;
     transform: translate(-50%, -50%);
     max-width: 90%;
   }
@@ -275,16 +200,16 @@ body {
     padding: 0.35rem 0.7rem;
   }
 
-  /* PRODUCT GRID SECTION */
+  /* PRODUCT GRID → 1 column */
   .product-grid {
-    grid-template-columns: 1fr;  
+    grid-template-columns: 1fr;
   }
   .product-card__label {
     font-size: 0.9rem;
   }
 
-  /* FEATURED CAROUSEL SECTION */
-  .feat‌ured-carousel-section {
+  /* FEATURED CAROUSEL → shrink title & arrows */
+  .featured-carousel-section {
     padding: 1.5rem 0.5rem;
   }
   .featured-carousel-section__title {
@@ -298,11 +223,4 @@ body {
     font-size: 1rem;
     padding: 0.3rem 0.5rem;
   }
-  /* .glide__bullets {
-    gap: 0.4rem;
-  } */
-  /* .glide__bullet {
-    width: 0.6rem;
-    height: 0.6rem;
-  } */
 }
