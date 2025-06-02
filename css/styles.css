@@ -182,7 +182,7 @@ body {
 }
 
 /* Bullets */
-.glide__bullets {
+/* .glide__bullets {
   margin-top: 1rem;
   display: flex;
   justify-content: center;
@@ -202,7 +202,7 @@ body {
 }
 .glide__bullet[aria-selected='true'] {
   background: #333333;
-}
+} */
 
 /* =====================  GLOBAL RESPONSIVE BREAKPOINTS  ===================== */
 
@@ -298,11 +298,11 @@ body {
     font-size: 1rem;
     padding: 0.3rem 0.5rem;
   }
-  .glide__bullets {
+  /* .glide__bullets {
     gap: 0.4rem;
-  }
-  .glide__bullet {
+  } */
+  /* .glide__bullet {
     width: 0.6rem;
     height: 0.6rem;
-  }
+  } */
 }
