@@ -1,34 +1,24 @@
-/* ================= Reusable Button ================= */
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  text-transform: uppercase;
+/* ===================  BASE RESET & TYPOGRAPHY  =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: "Sohne", Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  line-height: 1.2;
-  border-radius: 4px;
-  cursor: pointer;
+  color: #333333;
+  background-color: #ffffff;
+  line-height: 1.4;
 }
 
-
-.btn--primary {
-  color: #ffffff;
-  background: transparent;
-  border: 1px solid #ffffff;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-}
-
-/* =============== Hero Section =============== */
+/* =====================  HERO SECTION (RESPONSIVE)  ===================== */
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;        
   overflow: hidden;
-  margin: 0;
-  padding: 0;
 }
-
 
 .hero__img {
   position: absolute;
@@ -40,7 +30,6 @@
   z-index: 1;
 }
 
-
 .hero__overlay {
   position: absolute;
   top: 50%;
@@ -51,17 +40,15 @@
   max-width: 400px;     
 }
 
-/* Headline styling */
 .hero__title {
   margin: 0 0 1rem 0;
-  font-family: "Sohne", Arial, Helvetica, sans-serif;
   font-size: 2.5rem;
-  color: #ffffff;       /* white text */
+  color: #ffffff;       
   line-height: 1.2;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* ============= CENTERING GRID VIA FLEXBOX ============= */
+/* =====================  PRODUCT GRID SECTION (RESPONSIVE)  ===================== */
 .product-section {
   display: flex;
   justify-content: center; 
@@ -69,22 +56,19 @@
   background-color: #ffffff;
 }
 
-/* ================= THE 3-COLUMN GRID ================= */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
   gap: 1.5rem;       
   max-width: 1200px; 
   width: 100%;
 }
 
-/* ============= INDIVIDUAL PRODUCT CARD ============= */
 .product-card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 .product-card__img {
   width: 100%;
@@ -93,10 +77,8 @@
   border-radius: 4px; 
 }
 
-
 .product-card__label {
   margin-top: 0.75rem;
-  font-family: "Sohne", Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
@@ -104,64 +86,48 @@
   letter-spacing: 0.025em;
 }
 
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-body {
-  font-family: "Sohne", Arial, Helvetica, sans-serif;
-  color: #333333;
-  background-color: #ffffff;
-  line-height: 1.4;
-}
-
-/* ================= FEATURED SECTION ================= */
-.featured-section {
+/* =====================  FEATURED CAROUSEL SECTION (RESPONSIVE)  ===================== */
+.featured-carousel-section {
   padding: 2rem 1rem;
+  background-color: #ffffff;
+  text-align: center; /* heading & carousel are centered by a wrapper anyway */
+}
+
+.featured-carousel-section__wrapper {
+  max-width: 1200px;    
+  margin: 0 auto;       
+  padding: 0 1rem;      
+}
+
+.featured-carousel-section__title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #000000;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-
-.featured-section__title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.03em;
-  color: #000000;
-}
-
-/* ====== FLEX CONTAINER FOR PRODUCTS ====== */
-.featured-products {
+/* Slides: center image + label inside each slide */
+.glide__slide {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;       
-  gap: 1.5rem;           
-  max-width: 1200px;
-  margin: 0 auto;        
+  justify-content: center;
+  align-items: center;
 }
 
-/* ====== PRODUCT ITEM  ====== */
-.product-item {
-  flex: 1 1 calc(25% - 1.125rem);
+.product-card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
-.product-item__img {
+.product-card__img {
   width: 100%;
-  height: auto; 
-  display: block;
+  height: auto;
   border-radius: 4px;
 }
 
-
-.product-item__label {
+.product-card__label {
   margin-top: 0.75rem;
   font-size: 1rem;
   font-weight: 500;
@@ -170,19 +136,155 @@ body {
   color: #555555;
 }
 
-.featured-carousel-section__wrapper {
-  max-width: 1200px;    /* match the carousel’s max-width */
-  margin: 0 auto;       /* center it horizontally */
-  padding: 0 1rem;      /* optional side padding */
+/* Arrows */
+.glide__arrows {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
-/* Center the title text within the wrapper */
-.featured-carousel-section__title {
-  font-family: "Sohne", Arial, Helvetica, sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: #000000;
-  margin-bottom: 1.5rem;
-  text-align: center;
+.glide__arrow {
+  background-color: rgba(0,0,0,0.05);
+  border: none;
+  font-size: 1.5rem;
+  color: #333333;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.glide__arrow:hover {
+  background-color: rgba(0,0,0,0.15);
+}
+
+/* Bullets */
+.glide__bullets {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.glide__bullet {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: #cccccc;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.glide__bullet:hover {
+  background: #aaaaaa;
+}
+.glide__bullet[aria-selected='true'] {
+  background: #333333;
+}
+
+/* =====================  GLOBAL RESPONSIVE BREAKPOINTS  ===================== */
+
+/* 1) LARGE TABLETS / SMALL DESKTOPS (≤ 900px) */
+/*    - Hero overlay: move closer to center to avoid clipping
+     - Product grid: switch to 2 columns instead of 3
+     - Featured carousel: arrows/bullets and text shrink a bit */
+@media (max-width: 900px) {
+  /* HERO SECTION */
+  .hero__overlay {
+    top: 50%;
+    right: 5%;               /* shift overlay a bit more toward center */
+    transform: translateY(-50%);
+    max-width: 300px;
+  }
+  .hero__title {
+    font-size: 2rem;
+  }
+  .btn--primary {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* PRODUCT GRID SECTION */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+  .product-card__label {
+    font-size: 0.95rem;
+  }
+
+  /* FEATURED CAROUSEL SECTION */
+  .featured-carousel-section__title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  .product-card__label {
+    font-size: 0.95rem;
+  }
+  .glide__arrow {
+    font-size: 1.25rem;
+    padding: 0.4rem 0.6rem;
+  }
+  .glide__bullet {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}
+
+/* 2) PHONES & SMALL SCREENS (≤ 600px) */
+/*    - Hero: overlay re-centers horizontally, shrinks text
+     - Product grid: single column
+     - Featured carousel: single slide view, shrink fonts and controls */
+@media (max-width: 600px) {
+  /* HERO SECTION */
+  .hero {
+    height: auto;             /* let the image decide height */
+  }
+  .hero__img {
+    height: 60vh;             /* about 60% of viewport height */
+  }
+  .hero__overlay {
+    top: 50%;
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+  }
+  .hero__title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .btn--primary {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  /* PRODUCT GRID SECTION */
+  .product-grid {
+    grid-template-columns: 1fr;  /* 1 column on mobile */
+  }
+  .product-card__label {
+    font-size: 0.9rem;
+  }
+
+  /* FEATURED CAROUSEL SECTION */
+  .feat‌ured-carousel-section {
+    padding: 1.5rem 0.5rem;
+  }
+  .featured-carousel-section__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .product-card__label {
+    font-size: 0.9rem;
+  }
+  .glide__arrow {
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+  }
+  .glide__bullets {
+    gap: 0.4rem;
+  }
+  .glide__bullet {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
 }
