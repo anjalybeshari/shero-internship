@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shero Internship</title>
   <link rel="stylesheet" href="css/styles.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.core.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.theme.min.css"
+  />
 </head>
 <body>
 
@@ -56,53 +64,103 @@
     </div>
   </section>
 
-   <!-- ================= FEATURED PRODUCTS SECTION ================= -->
-  <section class="featured-section">
-    <h2 class="featured-section__title">Featured Products</h2>
-    <div class="featured-products">
-      
-      <!-- Product 1 -->
-      <div class="product-item">
-        <img
-          src="assets/dummy_600x400_ffffff_cccccc.png"
-          alt="Embroidery Stabilizer rolls"
-          class="product-item__img"
-        />
-        <p class="product-item__label">EMBROIDERY STABILIZER</p>
+ <!-- ================= FEATURED PRODUCTS (CAROUSEL) ================= -->
+  <section class="featured-carousel-section">
+
+  <!-- Centered wrapper to constrain width and align title with slides -->
+  <div class="featured-carousel-section__wrapper">
+
+    <h2 class="featured-carousel-section__title">Featured Products</h2>
+
+    <div class="glide">
+      <!-- (glide__track, slides, arrows, bullets as before) -->
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <!-- Slide 1 -->
+          <li class="glide__slide">
+            <div class="product-card">
+              <img
+                src="assets/dummy_600x400_ffffff_cccccc.png"
+                alt="Embroidery Stabilizer rolls"
+                class="product-card__img"
+              />
+              <p class="product-card__label">EMBROIDERY STABILIZER</p>
+            </div>
+          </li>
+          <!-- Slide 2 -->
+          <li class="glide__slide">
+            <div class="product-card">
+              <img
+                src="assets/dummy_600x400_ffffff_cccccc.png"
+                alt="Cubbie Grey Elephant plush"
+                class="product-card__img"
+              />
+              <p class="product-card__label">CUBBIE GREY ELEPHANT</p>
+            </div>
+          </li>
+          <!-- Slide 3 -->
+          <li class="glide__slide">
+            <div class="product-card">
+              <img
+                src="assets/dummy_600x400_ffffff_cccccc.png"
+                alt="Kimberbell Cup of Cheer thread set"
+                class="product-card__img"
+              />
+              <p class="product-card__label">KIMBERBELL CUP OF CHEER</p>
+            </div>
+          </li>
+          <!-- Slide 4 -->
+          <li class="glide__slide">
+            <div class="product-card">
+              <img
+                src="assets/dummy_600x400_ffffff_cccccc.png"
+                alt="Kimberbell Two Scoops thread set"
+                class="product-card__img"
+              />
+              <p class="product-card__label">KIMBERBELL TWO SCOOPS</p>
+            </div>
+          </li>
+        </ul>
       </div>
 
-      <!-- Product 2 -->
-      <div class="product-item">
-        <img
-          src="assets/dummy_600x400_ffffff_cccccc.png"
-          alt="Cubbie Grey Elephant plush"
-          class="product-item__img"
-        />
-        <p class="product-item__label">CUBBIE GREY ELEPHANT</p>
+      <!-- Arrows -->
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">‹</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">›</button>
       </div>
 
-      <!-- Product 3 -->
-      <div class="product-item">
-        <img
-          src="assets/dummy_600x400_ffffff_cccccc.png"
-          alt="Kimberbell Cup of Cheer thread set"
-          class="product-item__img"
-        />
-        <p class="product-item__label">KIMBERBELL CUP OF CHEER</p>
+      <!-- Bullets -->
+      <div class="glide__bullets" data-glide-el="controls[nav]">
+        <button class="glide__bullet" data-glide-dir="=0"></button>
+        <button class="glide__bullet" data-glide-dir="=1"></button>
+        <button class="glide__bullet" data-glide-dir="=2"></button>
+        <button class="glide__bullet" data-glide-dir="=3"></button>
       </div>
-
-      <!-- Product 4 -->
-      <div class="product-item">
-        <img
-          src="assets/dummy_600x400_ffffff_cccccc.png"
-          alt="Kimberbell Two Scoops thread set"
-          class="product-item__img"
-        />
-        <p class="product-item__label">KIMBERBELL TWO SCOOPS</p>
-      </div>
-
     </div>
-  </section>
+  </div>
+</section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/glide.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Glide('.glide', {
+        type: 'carousel',
+        perView: 4,            // show 4 items at once on desktop
+        focusAt: 'center',
+        gap: 30,               // px gap between slides
+        autoplay: 5000,        // auto‐advance every 5 seconds
+        hoverpause: true,
+        breakpoints: {
+          900: {
+            perView: 2         // 2 slides on tablet
+          },
+          600: {
+            perView: 1         // 1 slide on mobile
+          }
+        }
+      }).mount();
+    });
+  </script>
 
 
 
