@@ -183,15 +183,12 @@ body {
 
 /* =====================  GLOBAL RESPONSIVE BREAKPOINTS  ===================== */
 
-/* 1) LARGE TABLETS / SMALL DESKTOPS (≤ 900px) */
-/*    - Hero overlay: move closer to center to avoid clipping
-     - Product grid: switch to 2 columns instead of 3
-     - Featured carousel: arrows/bullets and text shrink a bit */
+
 @media (max-width: 900px) {
   /* HERO SECTION */
   .hero__overlay {
     top: 50%;
-    right: 5%;               /* shift overlay a bit more toward center */
+    right: 5%;               
     transform: translateY(-50%);
     max-width: 300px;
   }
@@ -205,7 +202,7 @@ body {
 
   /* PRODUCT GRID SECTION */
   .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    grid-template-columns: repeat(2, 1fr); 
   }
   .product-card__label {
     font-size: 0.95rem;
@@ -230,16 +227,14 @@ body {
 }
 
 /* 2) PHONES & SMALL SCREENS (≤ 600px) */
-/*    - Hero: overlay re-centers horizontally, shrinks text
-     - Product grid: single column
-     - Featured carousel: single slide view, shrink fonts and controls */
+
 @media (max-width: 600px) {
   /* HERO SECTION */
   .hero {
-    height: auto;             /* let the image decide height */
+    height: auto;             
   }
   .hero__img {
-    height: 60vh;             /* about 60% of viewport height */
+    height: 60vh;             
   }
   .hero__overlay {
     top: 50%;
@@ -259,7 +254,7 @@ body {
 
   /* PRODUCT GRID SECTION */
   .product-grid {
-    grid-template-columns: 1fr;  /* 1 column on mobile */
+    grid-template-columns: 1fr;  
   }
   .product-card__label {
     font-size: 0.9rem;
