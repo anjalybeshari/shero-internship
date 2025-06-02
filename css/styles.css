@@ -5,6 +5,29 @@
   box-sizing: border-box;
 }
 
+/* ================= Reusable Button ================= */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Sohne", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.btn--primary {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid #ffffff;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+
+
 body {
   font-family: "Sohne", Arial, Helvetica, sans-serif;
   color: #333333;
