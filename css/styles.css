@@ -1,0 +1,171 @@
+/* ================= Reusable Button ================= */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Sohne", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.btn--primary {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid #ffffff;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* =============== Hero Section =============== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;        
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+
+.hero__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    
+  z-index: 1;
+}
+
+
+.hero__overlay {
+  position: absolute;
+  top: 50%;
+  right: 10%;           
+  transform: translateY(-50%);
+  text-align: right;
+  z-index: 2;           
+  max-width: 400px;     
+}
+
+/* Headline styling */
+.hero__title {
+  margin: 0 0 1rem 0;
+  font-family: "Sohne", Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  color: #ffffff;       /* white text */
+  line-height: 1.2;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ============= CENTERING GRID VIA FLEXBOX ============= */
+.product-section {
+  display: flex;
+  justify-content: center; 
+  padding: 2rem 1rem;       
+  background-color: #ffffff;
+}
+
+/* ================= THE 3-COLUMN GRID ================= */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;       
+  max-width: 1200px; 
+  width: 100%;
+}
+
+/* ============= INDIVIDUAL PRODUCT CARD ============= */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.product-card__img {
+  width: 100%;
+  height: auto;       
+  display: block;
+  border-radius: 4px; 
+}
+
+
+.product-card__label {
+  margin-top: 0.75rem;
+  font-family: "Sohne", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  color: #333333;
+  letter-spacing: 0.025em;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Sohne", Arial, Helvetica, sans-serif;
+  color: #333333;
+  background-color: #ffffff;
+  line-height: 1.4;
+}
+
+/* ================= FEATURED SECTION ================= */
+.featured-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+
+.featured-section__title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+  color: #000000;
+}
+
+/* ====== FLEX CONTAINER FOR PRODUCTS ====== */
+.featured-products {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;       
+  gap: 1.5rem;           
+  max-width: 1200px;
+  margin: 0 auto;        
+}
+
+/* ====== PRODUCT ITEM  ====== */
+.product-item {
+  flex: 1 1 calc(25% - 1.125rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.product-item__img {
+  width: 100%;
+  height: auto; 
+  display: block;
+  border-radius: 4px;
+}
+
+
+.product-item__label {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #555555;
+}
